@@ -1,0 +1,27 @@
+https://qus23xzvx5jqc-api.azurewebsites.net
+
+#create virtual Environment
+python -m venv aiwins
+source aiwins/bin/activate
+
+#container registry
+container name qus23xzvx5jqccosureg
+login server qus23xzvx5jqccosureg.azurecr.io
+username qus23xzvx5jqccosureg
+password R7J2WwGIjHL6qf1Iw2zQnmIahUi/VZBoaC9YjkZwvI+ACRCM63ak
+
+#create service principal
+az ad sp create-for-rbac --name "TechExcelAzurePaaS" --json-auth --role contributor --scopes /subscriptions/96e48853-6344-4e08-8acf-ac10bba60796/resourceGroups/TechExcelTestUba
+{
+  "clientId": "f6a71dc3-cea2-4348-b3ca-96868bec91ad",
+  "clientSecret": "mQd8Q~py-LwffNrUVxgFMz-yPFgE53pR1qv.SckP",
+  "subscriptionId": "96e48853-6344-4e08-8acf-ac10bba60796",
+  "tenantId": "c42420f9-174f-47a9-ba37-fd8f30dd6e61",
+  "activeDirectoryEndpointUrl": "https://login.microsoftonline.com",
+  "resourceManagerEndpointUrl": "https://management.azure.com/",
+  "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+  "sqlManagementEndpointUrl": "https://management.core.windows.net:8443/",
+  "galleryEndpointUrl": "https://gallery.azure.com/",
+  "managementEndpointUrl": "https://management.core.windows.net/"
+}
+
